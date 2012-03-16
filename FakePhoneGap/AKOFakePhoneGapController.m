@@ -12,6 +12,7 @@
 @interface AKOFakePhoneGapController ()
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (retain, nonatomic) UIWebView *webView;
 
 @end
 
@@ -31,6 +32,13 @@
 }
 
 #pragma mark - View lifecycle
+
+- (void)loadView
+{
+    [super loadView];
+    self.webView = [[[UIWebView alloc] initWithFrame:self.view.bounds] autorelease];
+    [self.view addSubview:self.webView];
+}
 
 - (void)viewDidLoad
 {

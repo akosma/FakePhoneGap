@@ -14,6 +14,4 @@
                                                  UIWebViewDelegate, 
                                                  CLLocationManagerDelegate>
 
-@property (retain, nonatomic) IBOutlet UIWebView *webView;
-
 @end
