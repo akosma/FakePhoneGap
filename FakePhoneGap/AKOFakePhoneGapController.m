@@ -14,6 +14,8 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (retain, nonatomic) UIWebView *webView;
 
+- (void)log:(NSString *)message;
+
 @end
 
 
@@ -37,6 +39,7 @@
 {
     [super loadView];
     self.webView = [[[UIWebView alloc] initWithFrame:self.view.bounds] autorelease];
+    self.webView.delegate = self;
     [self.view addSubview:self.webView];
 }
 
@@ -44,7 +47,8 @@
 {
     [super viewDidLoad];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"www" ofType:@""];
+    path = [path stringByAppendingPathComponent:@"index.html"];
     NSURL *url = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
@@ -66,31 +70,35 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 {
     NSURL *url = [request URL];
     NSString *urlString = [url absoluteString];
-    if ([urlString hasPrefix:@"photolibrary://"])
+    if ([urlString hasPrefix:@"fakephonegap"])
     {
-        UIImagePickerController *controller = [[[UIImagePickerController alloc] init] autorelease];
-        controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        controller.delegate = self;
-        [self presentModalViewController:controller animated:YES];
-        NSLog(@"Opening the photo library");
-        return NO;
-    }
-    else if ([urlString hasPrefix:@"geolocation://"])
-    {
-        if (self.locationManager == nil)
+        NSString *path = [url host];
+        [self log:path];
+        if ([path isEqualToString:@"openphotolibrary"])
         {
-            self.locationManager = [[[CLLocationManager alloc] init] autorelease];
-            self.locationManager.delegate = self;
+            UIImagePickerController *controller = [[[UIImagePickerController alloc] init] autorelease];
+            controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            controller.delegate = self;
+            [self presentModalViewController:controller animated:YES];
+            [self log:@"Opening the photo library"];
+            return NO;
         }
-        [self.locationManager startUpdatingLocation];
-        
-        // Automatically stop the location manager after 5 seconds
-        [self.locationManager performSelector:@selector(stopUpdatingLocation)
-                                   withObject:nil
-                                   afterDelay:5];
-        
-        NSString *statusChange = @"PhoneGap.setStatusMessage('Location manager started');";
-        [self.webView stringByEvaluatingJavaScriptFromString:statusChange];
+        else if ([path isEqualToString:@"startgeolocation"])
+        {
+            if (self.locationManager == nil)
+            {
+                self.locationManager = [[[CLLocationManager alloc] init] autorelease];
+                self.locationManager.delegate = self;
+            }
+            [self.locationManager startUpdatingLocation];
+            [self log:@"Location manager started"];
+            return NO;
+        }
+        else if ([path isEqualToString:@"stopgeolocation"])
+        {
+            [self.locationManager stopUpdatingLocation];
+            [self log:@"Location manager stopped"];
+        }
         return NO;
     }
     return YES;
@@ -102,13 +110,14 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
-    NSString *template = @"PhoneGap.setLocation(%1.2f, %1.2f);";
+    NSString *template = @"FakePhoneGap.locationUpdated(%1.2f, %1.2f);";
     CLLocationDegrees lat = newLocation.coordinate.latitude;
     CLLocationDegrees lng = newLocation.coordinate.longitude;
 
     NSString *statusChange = [NSString stringWithFormat:template, lat, lng];
     NSString *result = [self.webView stringByEvaluatingJavaScriptFromString:statusChange];
-    NSLog(@"Location changed in JavaScript to (%@)", result);
+    NSString *message = [NSString stringWithFormat:@"Location changed in JavaScript to (%@)", result];
+    [self log:message];
 }
 
 #pragma mark - UIImagePickerControllerDelegate methods
@@ -120,17 +129,34 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     NSData *imageData = UIImageJPEGRepresentation(image, 0.8);
     NSString *base64Data = [imageData base64EncodedString];
     NSArray *array = [base64Data componentsSeparatedByString:@"\n"];
-    NSString *template = @"PhoneGap.appendImageData(\"%@\");";
+    NSString *template = @"FakePhoneGap.appendImageData(\"%@\");";
     for (NSString *string in array)
     {
-        NSString *appendImageData = [NSString stringWithFormat:template, [string stringByReplacingOccurrencesOfString:@"\r" withString:@""]];
+        NSString *clean = [string stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+        NSString *appendImageData = [NSString stringWithFormat:template, clean];
         [self.webView stringByEvaluatingJavaScriptFromString:appendImageData];
     }
-    NSString *displayImage = @"PhoneGap.displayImage()";
+    NSString *displayImage = @"FakePhoneGap.imageDataReady()";
     NSString *result = [self.webView stringByEvaluatingJavaScriptFromString:displayImage];
-    NSLog(@"Image displayed: %@", result);
+    NSString *message = [NSString stringWithFormat:@"Image displayed: %@", result];
+    [self log:message];
 
     [picker dismissModalViewControllerAnimated:YES];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self log:@"Image picker dismissed"];
+    [picker dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - Private methods
+
+- (void)log:(NSString *)message
+{
+    NSLog(message, nil);
+    NSString *statusChange = [NSString stringWithFormat:@"FakePhoneGap.log('%@');", message];
+    [self.webView stringByEvaluatingJavaScriptFromString:statusChange];
 }
 
 @end

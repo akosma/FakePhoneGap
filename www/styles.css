@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+}
+
+span {
+    font-weight: bold;
+}
+
+span#statusLabel {
+    color: red;
+    background-color: yellow;
+}    
+
+span.geoInfo {
+    color: blue;
+    background-color: lightgray;
+}
+
+img {
+    width: 280px;
+}
+

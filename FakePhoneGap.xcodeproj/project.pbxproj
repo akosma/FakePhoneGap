@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A67B84A1513B3B80020D39D /* www in Resources */ = {isa = PBXBuildFile; fileRef = 3A67B8491513B3B80020D39D /* www */; };
 		3AC44DC714EE4107003316A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC44DC614EE4107003316A5 /* UIKit.framework */; };
 		3AC44DC914EE4107003316A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC44DC814EE4107003316A5 /* Foundation.framework */; };
 		3AC44DCB14EE4107003316A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC44DCA14EE4107003316A5 /* CoreGraphics.framework */; };
@@ -14,12 +15,12 @@
 		3AC44DD314EE4107003316A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD214EE4107003316A5 /* main.m */; };
 		3AC44DD714EE4107003316A5 /* AKOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD614EE4107003316A5 /* AKOAppDelegate.m */; };
 		3AC44DDA14EE4107003316A5 /* AKOFakePhoneGapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD914EE4107003316A5 /* AKOFakePhoneGapController.m */; };
-		3AC44DE414EE418A003316A5 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3AC44DE314EE418A003316A5 /* index.html */; };
 		3AEB87CA14F1020A009FC5E1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEB87C914F1020A009FC5E1 /* CoreLocation.framework */; };
 		3AEB87CE14F10961009FC5E1 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEB87CD14F10961009FC5E1 /* NSData+Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A67B8491513B3B80020D39D /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		3AC44DC214EE4107003316A5 /* FakePhoneGap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakePhoneGap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC44DC614EE4107003316A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3AC44DC814EE4107003316A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,7 +33,6 @@
 		3AC44DD614EE4107003316A5 /* AKOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKOAppDelegate.m; sourceTree = "<group>"; };
 		3AC44DD814EE4107003316A5 /* AKOFakePhoneGapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKOFakePhoneGapController.h; sourceTree = "<group>"; };
 		3AC44DD914EE4107003316A5 /* AKOFakePhoneGapController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKOFakePhoneGapController.m; sourceTree = "<group>"; };
-		3AC44DE314EE418A003316A5 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3AEB87C914F1020A009FC5E1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3AEB87CC14F10961009FC5E1 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		3AEB87CD14F10961009FC5E1 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
@@ -56,6 +56,7 @@
 		3AC44DB714EE4107003316A5 = {
 			isa = PBXGroup;
 			children = (
+				3A67B8491513B3B80020D39D /* www */,
 				3AC44DCC14EE4107003316A5 /* FakePhoneGap */,
 				3AC44DC514EE4107003316A5 /* Frameworks */,
 				3AC44DC314EE4107003316A5 /* Products */,
@@ -91,7 +92,6 @@
 				3AEB87CC14F10961009FC5E1 /* NSData+Base64.h */,
 				3AEB87CD14F10961009FC5E1 /* NSData+Base64.m */,
 				3AC44DCD14EE4107003316A5 /* Supporting Files */,
-				3AC44DE314EE418A003316A5 /* index.html */,
 			);
 			path = FakePhoneGap;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AC44DD114EE4107003316A5 /* InfoPlist.strings in Resources */,
-				3AC44DE414EE418A003316A5 /* index.html in Resources */,
+				3A67B84A1513B3B80020D39D /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

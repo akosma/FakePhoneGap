@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fake PhoneGap</title>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="styles.css" />
+        <script src="FakePhoneGap.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <h1>Fake PhoneGap!</h1>
+
+        <p>Status: <span id="statusLabel"></span></p>
+
+        <div id="console">
+            <h2>Console</h2>
+
+            <p><button onclick="FakePhoneGap.openPhotoLibrary(displayImage)">Open Photo Library</button>
+                <button onclick="FakePhoneGap.startGeolocation(setLocation)">Start
+                    Geolocation</button></p>
+        </div>
+
+        <div id="geolocation">
+            <h2>Current location</h2>
+
+            <p>Latitude: <span id="latitudeLabel" class="geoInfo"></span><br/>
+                Longitude: <span id="longitudeLabel" class="geoInfo"></span></p>
+        </div>
+
+        <div id="imageDiv">
+            <h2>Selected image</h2>
+            <img id="selectedImage" alt="Embedded Image" src="about:blank" />
+        </div>
+
+        <div id="debugDiv">
+        </div>
+
+    </body>
+</html>
+
