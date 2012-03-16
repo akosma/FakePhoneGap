@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fake PhoneGap</title>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <script>
+
+            var PhoneGap = function () {
+
+                var imageData = [];
+
+                return {
+
+                    openPhotoLibrary: function() {
+                        window.location = "photolibrary://open?parameter=value";
+                    },
+
+                    startGeolocation: function () {
+                        window.location = "geolocation://start";
+                    },
+
+                    setStatusMessage: function (message) {
+                        var statusLabel = document.getElementById("statusLabel");
+                        statusLabel.innerText = message;
+                        setTimeout(PhoneGap.clearStatusMessage, 3000);
+                    },
+
+                    clearStatusMessage: function () {
+                        var statusLabel = document.getElementById("statusLabel");
+                        statusLabel.innerText = "";
+                    },
+
+                    setLocation: function (latitude, longitude) {
+                        var latitudeLabel = document.getElementById("latitudeLabel");
+                        var longitudeLabel = document.getElementById("longitudeLabel");
+                        latitudeLabel.innerText = latitude;
+                        longitudeLabel.innerText = longitude;
+
+                        var result = [latitude, longitude];
+                        return result.join(", ");
+                    },
+
+                    appendImageData: function (data) {
+                        // This method is required because UIWebKit (the embedded
+                        // engine that displays web pages inside of iOS apps)
+                        // silently kills scripts that take more than 10 MB to
+                        // execute; hence, we need to pass the image data in small
+                        // chunks, store everything in an array, and then trigger
+                        // the display later.
+                        imageData.push(data);
+                    },
+
+                    displayImage: function () {
+                        var selectedImage = document.getElementById("selectedImage");
+                        var data = ["data:image/jpg;base64", imageData.join("")];
+                        var srcText = data.join(",");
+                        var debugDiv = document.getElementById("debugDiv");
+                        debugDiv.innerText = srcText.substring(0, 35) + "...";
+                        selectedImage.src = srcText;
+                        imageData = [];
+                        PhoneGap.setStatusMessage("Image changed!");
+                        return srcText;
+                    }
+                };
+            }();
+
+        </script>
+
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+
+            span {
+                font-weight: bold;
+            }
+
+            span#statusLabel {
+                color: red;
+                background-color: yellow;
+            }    
+
+            span.geoInfo {
+                color: blue;
+                background-color: lightgray;
+            }
+
+            img {
+                width: 280px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <h1>Fake PhoneGap!</h1>
+
+        <p>Status: <span id="statusLabel"></span></p>
+
+        <div id="console">
+            <h2>Console</h2>
+
+            <p><button onclick="PhoneGap.openPhotoLibrary()">Open Photo Library</button>
+                <button onclick="PhoneGap.startGeolocation()">Start
+                    Geolocation</button></p>
+        </div>
+
+        <div id="geolocation">
+            <h2>Current location</h2>
+
+            <p>Latitude: <span id="latitudeLabel" class="geoInfo"></span><br/>
+                Longitude: <span id="longitudeLabel" class="geoInfo"></span></p>
+        </div>
+
+        <div id="imageDiv">
+            <h2>Selected image</h2>
+            <img id="selectedImage" alt="Embedded Image" src="about:blank" />
+        </div>
+
+        <div id="debugDiv">
+        </div>
+
+    </body>
+</html>
+

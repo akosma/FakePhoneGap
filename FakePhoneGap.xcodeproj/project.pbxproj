@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AC44DC714EE4107003316A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC44DC614EE4107003316A5 /* UIKit.framework */; };
+		3AC44DC914EE4107003316A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC44DC814EE4107003316A5 /* Foundation.framework */; };
+		3AC44DCB14EE4107003316A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC44DCA14EE4107003316A5 /* CoreGraphics.framework */; };
+		3AC44DD114EE4107003316A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AC44DCF14EE4107003316A5 /* InfoPlist.strings */; };
+		3AC44DD314EE4107003316A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD214EE4107003316A5 /* main.m */; };
+		3AC44DD714EE4107003316A5 /* AKOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD614EE4107003316A5 /* AKOAppDelegate.m */; };
+		3AC44DDA14EE4107003316A5 /* AKOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD914EE4107003316A5 /* AKOViewController.m */; };
+		3AC44DDD14EE4107003316A5 /* AKOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC44DDB14EE4107003316A5 /* AKOViewController.xib */; };
+		3AC44DE414EE418A003316A5 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3AC44DE314EE418A003316A5 /* index.html */; };
+		3AEB87CA14F1020A009FC5E1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEB87C914F1020A009FC5E1 /* CoreLocation.framework */; };
+		3AEB87CE14F10961009FC5E1 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEB87CD14F10961009FC5E1 /* NSData+Base64.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3AC44DC214EE4107003316A5 /* FakePhoneGap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakePhoneGap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC44DC614EE4107003316A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3AC44DC814EE4107003316A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3AC44DCA14EE4107003316A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3AC44DCE14EE4107003316A5 /* FakePhoneGap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FakePhoneGap-Info.plist"; sourceTree = "<group>"; };
+		3AC44DD014EE4107003316A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3AC44DD214EE4107003316A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3AC44DD414EE4107003316A5 /* FakePhoneGap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FakePhoneGap-Prefix.pch"; sourceTree = "<group>"; };
+		3AC44DD514EE4107003316A5 /* AKOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKOAppDelegate.h; sourceTree = "<group>"; };
+		3AC44DD614EE4107003316A5 /* AKOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKOAppDelegate.m; sourceTree = "<group>"; };
+		3AC44DD814EE4107003316A5 /* AKOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKOViewController.h; sourceTree = "<group>"; };
+		3AC44DD914EE4107003316A5 /* AKOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKOViewController.m; sourceTree = "<group>"; };
+		3AC44DDC14EE4107003316A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AKOViewController.xib; sourceTree = "<group>"; };
+		3AC44DE314EE418A003316A5 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		3AEB87C914F1020A009FC5E1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3AEB87CC14F10961009FC5E1 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		3AEB87CD14F10961009FC5E1 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AC44DBF14EE4107003316A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AEB87CA14F1020A009FC5E1 /* CoreLocation.framework in Frameworks */,
+				3AC44DC714EE4107003316A5 /* UIKit.framework in Frameworks */,
+				3AC44DC914EE4107003316A5 /* Foundation.framework in Frameworks */,
+				3AC44DCB14EE4107003316A5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AC44DB714EE4107003316A5 = {
+			isa = PBXGroup;
+			children = (
+				3AC44DCC14EE4107003316A5 /* FakePhoneGap */,
+				3AC44DC514EE4107003316A5 /* Frameworks */,
+				3AC44DC314EE4107003316A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3AC44DC314EE4107003316A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AC44DC214EE4107003316A5 /* FakePhoneGap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AC44DC514EE4107003316A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AEB87C914F1020A009FC5E1 /* CoreLocation.framework */,
+				3AC44DC614EE4107003316A5 /* UIKit.framework */,
+				3AC44DC814EE4107003316A5 /* Foundation.framework */,
+				3AC44DCA14EE4107003316A5 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AC44DCC14EE4107003316A5 /* FakePhoneGap */ = {
+			isa = PBXGroup;
+			children = (
+				3AC44DD514EE4107003316A5 /* AKOAppDelegate.h */,
+				3AC44DD614EE4107003316A5 /* AKOAppDelegate.m */,
+				3AC44DD814EE4107003316A5 /* AKOViewController.h */,
+				3AC44DD914EE4107003316A5 /* AKOViewController.m */,
+				3AC44DDB14EE4107003316A5 /* AKOViewController.xib */,
+				3AEB87CC14F10961009FC5E1 /* NSData+Base64.h */,
+				3AEB87CD14F10961009FC5E1 /* NSData+Base64.m */,
+				3AC44DCD14EE4107003316A5 /* Supporting Files */,
+				3AC44DE314EE418A003316A5 /* index.html */,
+			);
+			path = FakePhoneGap;
+			sourceTree = "<group>";
+		};
+		3AC44DCD14EE4107003316A5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AC44DCE14EE4107003316A5 /* FakePhoneGap-Info.plist */,
+				3AC44DCF14EE4107003316A5 /* InfoPlist.strings */,
+				3AC44DD214EE4107003316A5 /* main.m */,
+				3AC44DD414EE4107003316A5 /* FakePhoneGap-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AC44DC114EE4107003316A5 /* FakePhoneGap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AC44DE014EE4107003316A5 /* Build configuration list for PBXNativeTarget "FakePhoneGap" */;
+			buildPhases = (
+				3AC44DBE14EE4107003316A5 /* Sources */,
+				3AC44DBF14EE4107003316A5 /* Frameworks */,
+				3AC44DC014EE4107003316A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FakePhoneGap;
+			productName = FakePhoneGap;
+			productReference = 3AC44DC214EE4107003316A5 /* FakePhoneGap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AC44DB914EE4107003316A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "akosma software";
+			};
+			buildConfigurationList = 3AC44DBC14EE4107003316A5 /* Build configuration list for PBXProject "FakePhoneGap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3AC44DB714EE4107003316A5;
+			productRefGroup = 3AC44DC314EE4107003316A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AC44DC114EE4107003316A5 /* FakePhoneGap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AC44DC014EE4107003316A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AC44DD114EE4107003316A5 /* InfoPlist.strings in Resources */,
+				3AC44DDD14EE4107003316A5 /* AKOViewController.xib in Resources */,
+				3AC44DE414EE418A003316A5 /* index.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AC44DBE14EE4107003316A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AC44DD314EE4107003316A5 /* main.m in Sources */,
+				3AC44DD714EE4107003316A5 /* AKOAppDelegate.m in Sources */,
+				3AC44DDA14EE4107003316A5 /* AKOViewController.m in Sources */,
+				3AEB87CE14F10961009FC5E1 /* NSData+Base64.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3AC44DCF14EE4107003316A5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AC44DD014EE4107003316A5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3AC44DDB14EE4107003316A5 /* AKOViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AC44DDC14EE4107003316A5 /* en */,
+			);
+			name = AKOViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3AC44DDE14EE4107003316A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3AC44DDF14EE4107003316A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3AC44DE114EE4107003316A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakePhoneGap/FakePhoneGap-Prefix.pch";
+				INFOPLIST_FILE = "FakePhoneGap/FakePhoneGap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3AC44DE214EE4107003316A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakePhoneGap/FakePhoneGap-Prefix.pch";
+				INFOPLIST_FILE = "FakePhoneGap/FakePhoneGap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AC44DBC14EE4107003316A5 /* Build configuration list for PBXProject "FakePhoneGap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AC44DDE14EE4107003316A5 /* Debug */,
+				3AC44DDF14EE4107003316A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AC44DE014EE4107003316A5 /* Build configuration list for PBXNativeTarget "FakePhoneGap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AC44DE114EE4107003316A5 /* Debug */,
+				3AC44DE214EE4107003316A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AC44DB914EE4107003316A5 /* Project object */;
+}
