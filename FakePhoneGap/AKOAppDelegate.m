@@ -7,7 +7,7 @@
 //
 
 #import "AKOAppDelegate.h"
-#import "AKOViewController.h"
+#import "AKOFakePhoneGapController.h"
 
 @implementation AKOAppDelegate
 
@@ -25,7 +25,7 @@
 {
     CGRect rect = [UIScreen mainScreen].bounds;
     self.window = [[[UIWindow alloc] initWithFrame:rect] autorelease];
-    self.viewController = [[[AKOViewController alloc] init] autorelease];
+    self.viewController = [[[AKOFakePhoneGapController alloc] init] autorelease];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     

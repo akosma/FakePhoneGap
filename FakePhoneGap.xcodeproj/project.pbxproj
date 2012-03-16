@@ -13,8 +13,8 @@
 		3AC44DD114EE4107003316A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AC44DCF14EE4107003316A5 /* InfoPlist.strings */; };
 		3AC44DD314EE4107003316A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD214EE4107003316A5 /* main.m */; };
 		3AC44DD714EE4107003316A5 /* AKOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD614EE4107003316A5 /* AKOAppDelegate.m */; };
-		3AC44DDA14EE4107003316A5 /* AKOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD914EE4107003316A5 /* AKOViewController.m */; };
-		3AC44DDD14EE4107003316A5 /* AKOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC44DDB14EE4107003316A5 /* AKOViewController.xib */; };
+		3AC44DDA14EE4107003316A5 /* AKOFakePhoneGapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC44DD914EE4107003316A5 /* AKOFakePhoneGapController.m */; };
+		3AC44DDD14EE4107003316A5 /* AKOFakePhoneGapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC44DDB14EE4107003316A5 /* AKOFakePhoneGapController.xib */; };
 		3AC44DE414EE418A003316A5 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3AC44DE314EE418A003316A5 /* index.html */; };
 		3AEB87CA14F1020A009FC5E1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEB87C914F1020A009FC5E1 /* CoreLocation.framework */; };
 		3AEB87CE14F10961009FC5E1 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEB87CD14F10961009FC5E1 /* NSData+Base64.m */; };
@@ -31,9 +31,9 @@
 		3AC44DD414EE4107003316A5 /* FakePhoneGap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FakePhoneGap-Prefix.pch"; sourceTree = "<group>"; };
 		3AC44DD514EE4107003316A5 /* AKOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKOAppDelegate.h; sourceTree = "<group>"; };
 		3AC44DD614EE4107003316A5 /* AKOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKOAppDelegate.m; sourceTree = "<group>"; };
-		3AC44DD814EE4107003316A5 /* AKOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKOViewController.h; sourceTree = "<group>"; };
-		3AC44DD914EE4107003316A5 /* AKOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKOViewController.m; sourceTree = "<group>"; };
-		3AC44DDC14EE4107003316A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AKOViewController.xib; sourceTree = "<group>"; };
+		3AC44DD814EE4107003316A5 /* AKOFakePhoneGapController.h */ = {isa = PBXFileReference; path = AKOFakePhoneGapController.h; sourceTree = "<group>"; };
+		3AC44DD914EE4107003316A5 /* AKOFakePhoneGapController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKOFakePhoneGapController.m; sourceTree = "<group>"; };
+		3AC44DDC14EE4107003316A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AKOFakePhoneGapController.xib; sourceTree = "<group>"; };
 		3AC44DE314EE418A003316A5 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3AEB87C914F1020A009FC5E1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3AEB87CC14F10961009FC5E1 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -88,9 +88,9 @@
 			children = (
 				3AC44DD514EE4107003316A5 /* AKOAppDelegate.h */,
 				3AC44DD614EE4107003316A5 /* AKOAppDelegate.m */,
-				3AC44DD814EE4107003316A5 /* AKOViewController.h */,
-				3AC44DD914EE4107003316A5 /* AKOViewController.m */,
-				3AC44DDB14EE4107003316A5 /* AKOViewController.xib */,
+				3AC44DD814EE4107003316A5 /* AKOFakePhoneGapController.h */,
+				3AC44DD914EE4107003316A5 /* AKOFakePhoneGapController.m */,
+				3AC44DDB14EE4107003316A5 /* AKOFakePhoneGapController.xib */,
 				3AEB87CC14F10961009FC5E1 /* NSData+Base64.h */,
 				3AEB87CD14F10961009FC5E1 /* NSData+Base64.m */,
 				3AC44DCD14EE4107003316A5 /* Supporting Files */,
@@ -162,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AC44DD114EE4107003316A5 /* InfoPlist.strings in Resources */,
-				3AC44DDD14EE4107003316A5 /* AKOViewController.xib in Resources */,
+				3AC44DDD14EE4107003316A5 /* AKOFakePhoneGapController.xib in Resources */,
 				3AC44DE414EE418A003316A5 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +176,7 @@
 			files = (
 				3AC44DD314EE4107003316A5 /* main.m in Sources */,
 				3AC44DD714EE4107003316A5 /* AKOAppDelegate.m in Sources */,
-				3AC44DDA14EE4107003316A5 /* AKOViewController.m in Sources */,
+				3AC44DDA14EE4107003316A5 /* AKOFakePhoneGapController.m in Sources */,
 				3AEB87CE14F10961009FC5E1 /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,12 +192,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3AC44DDB14EE4107003316A5 /* AKOViewController.xib */ = {
+		3AC44DDB14EE4107003316A5 /* AKOFakePhoneGapController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3AC44DDC14EE4107003316A5 /* en */,
 			);
-			name = AKOViewController.xib;
+			name = AKOFakePhoneGapController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

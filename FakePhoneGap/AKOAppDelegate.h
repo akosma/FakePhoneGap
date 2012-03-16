@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class AKOViewController;
+@class AKOFakePhoneGapController;
 
 @interface AKOAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) AKOViewController *viewController;
+@property (strong, nonatomic) AKOFakePhoneGapController *viewController;
 
 @end
