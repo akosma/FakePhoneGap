@@ -15,6 +15,7 @@
 @property (retain, nonatomic) UIWebView *webView;
 
 - (void)log:(NSString *)message;
+- (NSString *)executeJavaScript:(NSString *)code;
 
 @end
 
@@ -115,7 +116,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     CLLocationDegrees lng = newLocation.coordinate.longitude;
 
     NSString *statusChange = [NSString stringWithFormat:template, lat, lng];
-    NSString *result = [self.webView stringByEvaluatingJavaScriptFromString:statusChange];
+    NSString *result = [self executeJavaScript:statusChange];
     NSString *message = [NSString stringWithFormat:@"Location changed in JavaScript to (%@)", result];
     [self log:message];
 }
@@ -134,10 +135,10 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     {
         NSString *clean = [string stringByReplacingOccurrencesOfString:@"\r" withString:@""];
         NSString *appendImageData = [NSString stringWithFormat:template, clean];
-        [self.webView stringByEvaluatingJavaScriptFromString:appendImageData];
+        [self executeJavaScript:appendImageData];
     }
-    NSString *displayImage = @"FakePhoneGap.imageDataReady()";
-    NSString *result = [self.webView stringByEvaluatingJavaScriptFromString:displayImage];
+    NSString *imageDataReady = @"FakePhoneGap.imageDataReady()";
+    NSString *result = [self executeJavaScript:imageDataReady];
     NSString *message = [NSString stringWithFormat:@"Image displayed: %@", result];
     [self log:message];
 
@@ -156,7 +157,12 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 {
     NSLog(message, nil);
     NSString *statusChange = [NSString stringWithFormat:@"FakePhoneGap.log('%@');", message];
-    [self.webView stringByEvaluatingJavaScriptFromString:statusChange];
+    [self executeJavaScript:statusChange];
+}
+
+- (NSString *)executeJavaScript:(NSString *)code
+{
+    return [self.webView stringByEvaluatingJavaScriptFromString:code];
 }
 
 @end
