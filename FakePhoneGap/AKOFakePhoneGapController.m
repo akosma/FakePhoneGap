@@ -138,9 +138,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         [self executeJavaScript:appendImageData];
     }
     NSString *imageDataReady = @"FakePhoneGap.imageDataReady()";
-    NSString *result = [self executeJavaScript:imageDataReady];
-    NSString *message = [NSString stringWithFormat:@"Image displayed: %@", result];
-    [self log:message];
+    [self executeJavaScript:imageDataReady];
+    [self log:@"Image displayed"];
 
     [picker dismissModalViewControllerAnimated:YES];
 }
