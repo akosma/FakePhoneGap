@@ -34,4 +34,4 @@ var Application = function () {
     };
 }();
 
-FakePhoneGap.init(Application.setStatusMessage);
+FakePhoneGap.setConsoleFunction(Application.setStatusMessage);

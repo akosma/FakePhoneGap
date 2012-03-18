@@ -6,7 +6,7 @@ var FakePhoneGap = function () {
     var consoleCallback = null;
     
     return {
-        init: function (callback) {
+        setConsoleFunction: function (callback) {
             consoleCallback = callback;
         },
         
