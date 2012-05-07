@@ -2,7 +2,8 @@ Fake PhoneGap
 =============
 
 This project provides a simple implementation that shows the basic
-mechanism used in PhoneGap, for learning purposes.
+mechanisms used in PhoneGap to communicate from a web app to a native
+iOS app, for learning purposes.
 
 License
 -------
